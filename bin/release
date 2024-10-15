@@ -1,3 +1,8 @@
 #!/bin/sh
 
-echo "No additional release steps required."
+# Output the release configuration in YAML format
+cat <<EOF
+---
+config:
+  build: "true"
+EOF
