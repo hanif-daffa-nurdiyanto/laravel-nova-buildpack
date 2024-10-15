@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check for PHP installation
+if ! command -v php &> /dev/null
+then
+    echo "PHP could not be found"
+    exit 1
+fi
+
+# Navigate to the application root
+APP_DIR="$1"
+cd "$APP_DIR"
+
+# Run the desired command
+echo "Running php artisan nova:publish --force"
+php artisan nova:publish --force
+
+# Return success
+exit 0
