@@ -13,7 +13,7 @@ cd "$APP_DIR"
 
 # Run the desired command
 echo "Running php artisan nova:publish --force"
-php artisan nova:publish --force
+php artisan nova:publish
 
 # Return success
 exit 0
