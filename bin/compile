@@ -11,8 +11,16 @@ fi
 APP_DIR="$1"
 cd "$APP_DIR"
 
-# Run the desired command
-echo "Running php artisan nova:publish --force"
+echo "Running composer update"
+composer update
+
+echo "Installing laravel-mix"
+npm install laravel-mix --save-dev
+
+echo "Running npm run build-member-profile-prod"
+npm run build-member-profile-prod
+
+echo "Running php artisan nova:publish"
 php artisan nova:publish
 
 # Return success
