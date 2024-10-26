@@ -25,7 +25,7 @@ npm run build-member-profile-prod
 echo "Running php artisan nova:publish"
 php artisan nova:publish
 
-cat <<EOL > .user.ini
+cat <<EOL > public/.user.ini
 upload_max_filesize = $upload_size
 post_max_size = $post_size
 EOL
