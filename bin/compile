@@ -42,7 +42,7 @@ if [ -f "$PROCFILE" ]; then
     cp "$PROCFILE" "$PROCFILE.bak"
 
     # Write the new command to the Procfile
-    echo "web: vendor/bin/heroku-php-apache2 -c .user.ini app/" > "$PROCFILE"
+    echo "web: vendor/bin/heroku-php-apache2 -i .user.ini app/" > "$PROCFILE"
 
     echo "Procfile updated successfully."
 else
