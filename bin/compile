@@ -26,7 +26,7 @@ php artisan nova:publish
 upload_size=${UPLOAD_MAX_FILESIZE:-10M}
 post_size=${POST_MAX_SIZE:-10M}
 
-cat <<EOL > $BUILD_DIR/.user.ini
+cat <<EOL > .user.ini
 upload_max_filesize = $upload_size
 post_max_size = $post_size
 EOL
