@@ -9,8 +9,6 @@ fi
 
 # Navigate to the application root
 APP_DIR="$1"
-upload_size=${UPLOAD_MAX_FILESIZE:-10M}
-post_size=${POST_MAX_SIZE:-10M}
 cd "$APP_DIR"
 
 echo "Running composer update"
@@ -26,8 +24,8 @@ echo "Running php artisan nova:publish"
 php artisan nova:publish
 
 cat <<EOL > public/.user.ini
-upload_max_filesize = $upload_size
-post_max_size = $post_size
+upload_max_filesize = 50M
+post_max_size = 50M
 EOL
 
 echo "Custom .user.ini file created."
