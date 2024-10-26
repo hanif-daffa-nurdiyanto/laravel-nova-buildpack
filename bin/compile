@@ -32,22 +32,5 @@ EOL
 
 echo "Custom .user.ini file created."
 
-PROCFILE="$APP_DIR/Procfile"
-
-# Check if the Procfile exists and modify it
-if [ -f "$PROCFILE" ]; then
-    echo "Updating Procfile..."
-
-    # Backup the original Procfile
-    cp "$PROCFILE" "$PROCFILE.bak"
-
-    # Write the new command to the Procfile
-    echo "web: vendor/bin/heroku-php-apache2 -i .user.ini ." > "$PROCFILE"
-
-    echo "Procfile updated successfully."
-else
-    echo "Procfile not found in app/ directory."
-fi
-
 # Return success
 exit 0
